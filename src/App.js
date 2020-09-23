@@ -1,25 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import Button from './Button'
+
+const buttonA = <button>Histórico dos Clientes</button>
+const buttonB = <button>Cadastrar Cliente</button>
+
+
+const hasCustomer = true
 
 function App() {
+  const renderShowHistory = () => (
+    <div>
+      Clique no botão abaixo para visualizar o histórico dos clientes
+      <br />
+      {buttonA}
+    </div>
+  )
+  const renderAddCustomer = () => (
+    <div>
+      Clique abaixo para cadastrar o cliente
+      <br />
+      {buttonB}
+    </div>
+  )
+
+  const showCustomer = () => {
+    if (!hasCustomer) return null
+    return (
+      <div>
+        <h1>Nome do Cliente: Diego Vespa</h1>
+      </div>
+    )
+  }
+  console.log('hasCustomer '+hasCustomer)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <p>Digital Innovation One</p>
+      <p>Bem vindo a nossa aula</p>
+      {hasCustomer ? renderShowHistory() : renderAddCustomer()}
+      <div>
+        {showCustomer()}
+      </div>
+    </div >
   );
 }
 
