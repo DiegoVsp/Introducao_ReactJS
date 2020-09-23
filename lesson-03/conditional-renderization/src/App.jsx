@@ -1,14 +1,13 @@
-import React from 'react';
-// import Button from './Button'
+import React from "react";
 
 const buttonA = <button>Histórico dos Clientes</button>
-const buttonB = <button>Cadastrar Cliente</button>
 
+const buttonB = <button>Cadastrar Cliente</button>
 
 const hasCustomer = true
 
-function App() {
-  
+const App = () => {
+
   const renderShowHistory = (
     <div>
       Clique no botão abaixo para visualizar o histórico dos clientes
@@ -16,7 +15,8 @@ function App() {
       {buttonA}
     </div>
   )
-  const renderAddCustomer = () => (
+
+  const renderAddCustomer = (
     <div>
       Clique abaixo para cadastrar o cliente
       <br />
@@ -25,24 +25,28 @@ function App() {
   )
 
   const showCustomer = () => {
+
     if (!hasCustomer) return null
+
     return (
       <div>
-        <h1>Nome do Cliente: Diego Vespa</h1>
+        <h1>Nome do Cliente: Bruno Carneiro</h1>
       </div>
     )
   }
-  console.log('hasCustomer '+hasCustomer)
+
+  console.log('hasCustomer', hasCustomer)
+
+
   return (
-    <div className="App">
+    <div>
       <p>Digital Innovation One</p>
-      <p>Bem vindo a nossa aula</p>
-      {hasCustomer ? renderShowHistory() : renderAddCustomer()}
+      <p>Bem vindo a nossa aula =D.</p>
+      {hasCustomer ? renderShowHistory : renderAddCustomer}
       <div>
         {showCustomer()}
       </div>
-    </div >
+    </div>
   );
-}
-
+};
 export default App;
